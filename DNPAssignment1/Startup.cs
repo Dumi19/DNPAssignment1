@@ -9,13 +9,13 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Assignment.Data;
+using DNPAssignment1.Data;
 using Models;
-using Assignment.Authentication;
+using DNPAssignment1.Authentication;
 using Microsoft.AspNetCore.Components.Authorization;
 using FileData;
 
-namespace Assignment
+namespace DNPAssignment1
 {
     public class Startup
     {

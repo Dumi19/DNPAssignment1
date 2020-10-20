@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Models;
 
-namespace Assignment.Data{
+namespace DNPAssignment1.Data{
 public class InMemoryUserService : IUserService {
     private List<User> users;
 

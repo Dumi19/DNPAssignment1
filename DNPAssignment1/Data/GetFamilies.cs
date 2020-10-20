@@ -3,7 +3,7 @@ using Models;
 using FileData;
 
 
-namespace Assignment.Data{
+namespace DNPAssignment1.Data{
     public class GetFamilies: IGetFamilies{
     private static FileContext fileContext = new FileContext();
     private IList<Family> families = fileContext.Families;

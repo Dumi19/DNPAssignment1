@@ -1,6 +1,6 @@
 using Models;
 
-namespace Assignment.Data {
+namespace DNPAssignment1.Data {
 public interface IUserService {
     User ValidateUser(string userName, string password);
 }

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Models;
 
-namespace Assignment.Data{
+namespace DNPAssignment1.Data{
     public interface IGetFamilies{
         List<Adult> allAdults();
         List<Child> allChildren();
