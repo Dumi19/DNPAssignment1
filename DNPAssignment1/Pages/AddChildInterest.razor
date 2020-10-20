@@ -1,0 +1,49 @@
+@page "/childInterest"
+@using Models;
+@using Assignment.Data;
+@inject IGetFamilies igetfamilies;
+@inject NavigationManager navigationManager;
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
+
+
+<AuthorizeView Policy="SecurityLevel2" Context="Form">
+
+<h1>Add Interest</h1>
+
+<EditForm Model="@childID" OnValidSubmit="@addNewChildInterest">
+<DataAnnotationsValidator/>
+<ValidationSummary/>
+<div class="row">
+    <div class="col-md-4">
+        <form>
+            <div class="form-group">
+                <label class="control-label">Child ID (0-@(igetfamilies.allChildren().Count-1)</label>
+                <br/>
+                <InputNumber  @bind-Value="childID"/>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Interest</label>
+                <br/>
+                <InputTextArea placeholder="swimming" @bind-Value="interest"/>
+            </div>     
+        </form>
+        <button class="btn btn-primary" type="submit">Add new Child Interest</button>
+    </div>
+</div>
+</EditForm>
+
+</AuthorizeView>
+
+@code{
+    int childID = 0;
+    string interest = "";
+    public void addNewChildInterest(){
+        igetfamilies.addInterest(childID, interest);
+        navigationManager.NavigateTo("/showfamily");
+    }
+    protected override async Task OnInitializedAsync(){
+        
+    }
+
+}
